@@ -1,3 +1,4 @@
+import 'confirm_page.dart';
 import 'screen_table.dart';
 import 'package:flutter/material.dart';
 import 'package:namtrung_appfood/models/restaurant.dart';
@@ -48,47 +49,58 @@ class _MyHomePageState extends State<MyHomePage> {
                 Expanded(
                     child: Container(
                       margin: EdgeInsets.all(12),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(restaurant.name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 25
+                            fontSize: 30,
                           ),
                           ),
                           SizedBox(height: 4),
+                          // Container(
+                          //   margin: EdgeInsets.only(right: 20),
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.orange,
+                          //     borderRadius: BorderRadius.circular(0),
+                          //   ),
+                          //   child: IconButton(
+                          //     icon: Icon(Icons.add),
+                          //     onPressed: () {},
+                          //   ),
+                          // )
                         ],
                       ),
-                ))
+                )
+                )
               ],
             ),
           ),
         )
       );
     });
-
     return Column(children: retaurantList);
-
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.account_circle),
-          iconSize: 40,
-          onPressed: () {},
+          icon: Icon(Icons.arrow_back),
+          iconSize: 35,
+          onPressed: () => Navigator.pop(context),
         ),
         title: Text("Đặt Món"),
         actions: [
-          TextButton(onPressed: () {},
-              child: Column(
-                children: [
-                  Image.asset('assets/cart.png', width: 35, height: 35, color: Colors.white,)
-                ],
+          TextButton(
+              child: Text("Đã Đặt (${curentUser.cart.length})",
+              style: TextStyle(color: Colors.white,
+              fontSize: 20),
               ),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ConfirmPage()),
+          ),
           ),
         ],
       ),

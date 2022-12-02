@@ -54,26 +54,29 @@ class _RecentOrderState extends State<RecentOrder> {
                        overflow: TextOverflow.ellipsis,
                      ),
                      SizedBox(height: 4),
-                     Text(
-                       order.restaurant.name,
-                       style: TextStyle(
-                         fontSize: 15,
-                         fontWeight: FontWeight.bold,
-                       ),
-                       overflow: TextOverflow.ellipsis,
+                     // Text(
+                     //   order.restaurant.name,
+                     //   style: TextStyle(
+                     //     fontSize: 15,
+                     //     fontWeight: FontWeight.bold,
+                     //   ),
+                     //   overflow: TextOverflow.ellipsis,
+                     // ),
+                     // SizedBox(height: 4),
+                     // Text(
+                     //   order.date,
+                     //   style: TextStyle(
+                     //     fontSize: 15,
+                     //     fontWeight: FontWeight.bold,
+                     //   ),
+                     //   overflow: TextOverflow.ellipsis,
+                     // ),
+                     // SizedBox(height: 4),
+                     Text((order.food.price).toStringAsFixed(3),
+                     style: TextStyle(
+                         fontSize: 19,
+                         fontWeight: FontWeight.bold),
                      ),
-                     SizedBox(height: 4),
-                     Text(
-                       order.date,
-                       style: TextStyle(
-                         fontSize: 15,
-                         fontWeight: FontWeight.bold,
-                       ),
-                       overflow: TextOverflow.ellipsis,
-                     ),
-                     SizedBox(height: 4),
-                     Text(
-                         order.quantity)
                    ],
                  ),
            ),
